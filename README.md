@@ -45,10 +45,12 @@ graph TD
     J -- on success --> C
 
 
-```markdown
-![MLflow UI Screenshot](images/mlflow_dashboard.png)
+## Visual Overview
+
+### Experiment Tracking with MLflow
+
+![MLflow UI Screenshot](https://raw.githubusercontent.com/pythongurfer/AboutYouChurnPredictor/main/images/mlflow_dashboard.png)
 
 ### Live API Demo
 
-
-![Postman API Screenshot](images/postman_api.png)
+![Postman API Screenshot](https://raw.githubusercontent.com/pythongurfer/AboutYouChurnPredictor/main/images/postman_api.png)
