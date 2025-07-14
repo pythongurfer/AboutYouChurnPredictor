@@ -6,11 +6,26 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test: # Renamed job for clarity
+  build-and-test:
     runs-on: ubuntu-latest
+    
+    # --- ADD THIS PERMISSIONS BLOCK ---
+    permissions:
+      contents: read
+      packages: write # This grants permission to push Docker images
+    # ------------------------------------
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    # This action is needed to log in to the GitHub Container Registry
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -21,15 +36,15 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest # Install pytest
+        pip install pytest
 
-    - name: Run Tests with Pytest 
+    - name: Run Tests with Pytest
       run: pytest tests/
 
     - name: Build and push Docker image
-      # This step will only run if the tests above pass
       uses: docker/build-push-action@v4
       with:
         context: .
-        push: true # Set to false if you don't want to push automatically
-        tags: pythongurfer/churn-predictor:latest
+        push: true
+        # Update the tag to push to GitHub Container Registry (ghcr.io)
+        tags: ghcr.io/${{ github.repository }}:latest
