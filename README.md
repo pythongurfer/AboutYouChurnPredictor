@@ -31,7 +31,7 @@ This project includes the following key components:
 
 The diagram below outlines the end-to-end MLOps workflow, from data ingestion to real-time prediction.
 
-
+```mermaid
 graph TD
     A[Data Source: customer_data.csv] --> B{DVC: Version Control}
     B --> C[Training Script: train.py]
