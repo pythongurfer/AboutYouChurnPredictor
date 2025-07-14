@@ -29,8 +29,6 @@ This project includes the following key components:
 
 ## System Architecture
 
-The diagram below outlines the end-to-end MLOps workflow, from data ingestion to real-time prediction.
-
 ```mermaid
 graph TD
     A[Data Source: customer_data.csv] --> B{DVC: Version Control}
@@ -43,7 +41,6 @@ graph TD
     F -- churn: 0/1 --> H
     I{GitHub Actions} -- on push --> J[Run Pytests]
     J -- on success --> C
-
 
 ## Visual Overview
 
