@@ -1,26 +1,35 @@
-# ABOUT YOU - Customer Churn Predictor 
+# ABOUT YOU – Customer Churn Predictor
 
-### An End-to-End MLOps Pipeline to Proactively Identify and Reduce Customer Churn
+### An End-to-End MLOps Pipeline for Proactive Customer Retention
 
-This project demonstrates a full-stack MLOps approach to predict customer churn for a fashion e-commerce platform like **ABOUT YOU**. It covers everything from data versioning and experiment tracking to automated model deployment via a REST API.
+This project presents a full-stack MLOps solution to predict customer churn for a fashion e-commerce platform like **ABOUT YOU**. It encompasses data versioning, experiment tracking, model training, and automated deployment through a REST API.
 
-[![Build and Test](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions)
-[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![Build and Test](https://github.com/pythongurfer/AboutYouChurnPredictor/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/pythongurfer/AboutYouChurnPredictor/actions)
+![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## The Business Problem
+## Business Context
 
-In e-commerce, customer retention is cheaper and more effective than customer acquisition. This project tackles this challenge by building a machine learning system that identifies customers who are at a high risk of churning. By flagging these users proactively, the business can launch targeted retention campaigns (e.g., special offers, personalized outreach) to improve customer loyalty and protect revenue.
+In e-commerce, customer retention is both more cost-effective and strategically valuable than customer acquisition. This project addresses that challenge by implementing a machine learning pipeline that identifies users at high risk of churn. These insights can support targeted interventions—such as promotional offers or personalized outreach—to help improve customer retention and stabilize revenue.
 
 ---
 
-## Visual Showcase
+## Project Scope
 
-### System Architecture
+This project includes the following key components:
 
-This diagram illustrates the complete MLOps workflow, from data ingestion to model prediction.
+- **Data Version Control (DVC)** – Tracks changes in datasets and ensures reproducibility  
+- **Experiment Tracking (MLflow)** – Logs all training runs, parameters, and performance metrics  
+- **CI/CD Pipeline** – Automated testing and deployment using GitHub Actions  
+- **Model Serving** – Production-ready inference API using FastAPI, containerized via Docker  
+
+---
+
+## System Architecture
+
+The diagram below outlines the end-to-end MLOps workflow, from data ingestion to real-time prediction.
 
 ```mermaid
 graph TD
@@ -36,13 +45,8 @@ graph TD
     J -- on success --> C;
 
 
-
+Visual Overview
 Experiment Tracking with MLflow
-
 <img src="/images/mlflow_dashboard.png" alt="MLflow UI Screenshot" width="800"/>
-
-
 Live API Demo
-
 <img src="/images/postman_api.png" alt="Postman API Screenshot" width="800"/>
-
