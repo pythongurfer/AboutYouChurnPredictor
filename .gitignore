@@ -1,0 +1,7 @@
+data_generation.py
+/env
+
+app/__pycache__
+/mlruns
+
+learnings.txt

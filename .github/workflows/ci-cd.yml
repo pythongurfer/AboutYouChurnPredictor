@@ -1,0 +1,35 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD for Churn Predictor
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test: # Renamed job for clarity
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest # Install pytest
+
+    - name: Run Tests with Pytest 
+      run: pytest tests/
+
+    - name: Build and push Docker image
+      # This step will only run if the tests above pass
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: true # Set to false if you don't want to push automatically
+        tags: pythongurfer/churn-predictor:latest
