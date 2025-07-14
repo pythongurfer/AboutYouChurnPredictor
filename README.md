@@ -45,8 +45,12 @@ graph TD
     J -- on success --> C;
 
 
-Visual Overview
-Experiment Tracking with MLflow
-<img src="/images/mlflow_dashboard.png" alt="MLflow UI Screenshot" width="800"/>
-Live API Demo
-<img src="/images/postman_api.png" alt="Postman API Screenshot" width="800"/>
+## Visual Overview
+
+### Experiment Tracking with MLflow
+
+![MLflow UI Screenshot](images/mlflow_dashboard.png)
+
+### Live API Demo
+
+![Postman API Screenshot](images/postman_api.png)
