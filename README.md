@@ -26,22 +26,6 @@ This project includes the following key components:
 - **Model Serving** – Production-ready inference API using FastAPI, containerized via Docker  
 
 ---
-
-## System Architecture
-
-```mermaid
-graph TD
-    A[Data Source: customer_data.csv] --> B{DVC: Version Control}
-    B --> C[Training Script: train.py]
-    C -- Log Experiments --> D(MLflow Tracking Server)
-    C -- Register Best Model --> E[MLflow Model Registry]
-    E -- Loads Production Model --> F{FastAPI Prediction Service}
-    F -- Containerized by --> G([Docker Image])
-    H[API Request] -- JSON features --> F
-    F -- churn: 0/1 --> H
-    I{GitHub Actions} -- on push --> J[Run Pytests]
-    J -- on success --> C
-
 ## Visual Overview
 
 ### Experiment Tracking with MLflow
